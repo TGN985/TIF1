@@ -6,14 +6,14 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 
-public class Ventana1 extends javax.swing.JFrame {
+public class Lista extends javax.swing.JFrame {
 
     
      private DefaultTableModel modeloTabla;
      
      private static final List<String[]> registros = new ArrayList<>();
      
-    public Ventana1() {
+    public Lista() {
         initComponents();
         setLocationRelativeTo(null);
     
@@ -103,7 +103,7 @@ public class Ventana1 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Proyectoo ventana = new Proyectoo();
+        User ventana = new User();
         ventana.setLocationRelativeTo(null);
         ventana.setVisible(true);
         

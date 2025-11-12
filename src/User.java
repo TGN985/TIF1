@@ -14,12 +14,12 @@ import java.util.Map;
  *
  * @author Cesar
  */
-public class Proyectoo extends javax.swing.JFrame {
+public class User extends javax.swing.JFrame {
 
     /**
      * AWT singifica Abstract Window Toolkit o Kit de Herramientas de Ventana Abstracta
      */
-    public Proyectoo() {
+    public User() {
         initComponents();
         javax.swing.SwingUtilities.invokeLater(() -> {
     this.getRootPane().requestFocusInWindow();
@@ -120,7 +120,6 @@ public class Proyectoo extends javax.swing.JFrame {
         jLabel2.setText("Usuario:");
 
         jTextField1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(204, 204, 204));
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -243,7 +242,7 @@ public class Proyectoo extends javax.swing.JFrame {
 
     JOptionPane.showMessageDialog(this, String.format("Bienvenido %s\nTu hora de ingreso es %s", usuario, horaFormateada));
 
-    Ventana1 ventana = new Ventana1();
+    Lista ventana = new Lista();
     ventana.setUsuario(usuario);
     ventana.setVisible(true);
     ventana.setLocationRelativeTo(null);
@@ -260,7 +259,7 @@ public class Proyectoo extends javax.swing.JFrame {
      */
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(() -> {
-            Proyectoo ventana = new Proyectoo();
+            User ventana = new User();
             ventana.setLocationRelativeTo(null);
             ventana.setVisible(true);
             
