@@ -9,15 +9,21 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.Map;
-
+import java.util.ArrayList;
+import java.util.List;
 
 public class User extends javax.swing.JFrame {
+   
+  private List<Persona> personas;
 
-    /**
-     * AWT singifica Abstract Window Toolkit o Kit de Herramientas de Ventana Abstracta
-     */
+     
+     
     public User() {
         initComponents();
+        
+     personas = new ArrayList<>();    
+        
+        
         javax.swing.SwingUtilities.invokeLater(() -> {
     this.getRootPane().requestFocusInWindow();
 });

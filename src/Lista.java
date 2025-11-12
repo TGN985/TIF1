@@ -4,13 +4,14 @@ import javax.swing.table.DefaultTableModel;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 
 public class Lista extends javax.swing.JFrame {
-    
 
-  
-     private DefaultTableModel modeloTabla;
+    
+  private ArrayList<Persona> personas = new ArrayList<>();
+  private DefaultTableModel modeloTabla;
      
      private static final List<String[]> registros = new ArrayList<>();
      
@@ -25,16 +26,9 @@ public class Lista extends javax.swing.JFrame {
    
     public Lista() {
         initComponents();
+
+        personas = new ArrayList<>();   
         
-        nombre = "Josue Ninrod";
-        apellido = "Galan Obregon";
-        edad = "18";
-        carrera = "Ing. de Sistemas";
-        ciclo = "III";
-        sexo = "M";
-        correo = "jgalanobr@ucvvirtual.edu.pe";
-        telefono = "+51 931 659 971";
-                
         setLocationRelativeTo(null);
     
          modeloTabla = new DefaultTableModel(new Object[]{"Nombre", "Hora de Ingreso"}, 0);
@@ -44,6 +38,13 @@ public class Lista extends javax.swing.JFrame {
         }
     
     }
+    
+     public void agregarPersona(Persona p) {
+     personas.add(p);
+        JOptionPane.showMessageDialog(this, "Persona agregada: " + p.getNombre());
+    }
+    
+    
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -52,6 +53,7 @@ public class Lista extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -89,21 +91,30 @@ public class Lista extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1174444.png"))); // NOI18N
 
+        jButton3.setFont(new java.awt.Font("Candara", 0, 18)); // NOI18N
+        jButton3.setText("Agregar Personas");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(29, 29, 29))
         );
@@ -114,14 +125,17 @@ public class Lista extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(16, 16, 16))
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(31, 31, 31))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(31, 31, 31))))
+                        .addComponent(jLabel1)
+                        .addGap(19, 19, 19))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27))))
         );
 
         pack();
@@ -136,13 +150,37 @@ public class Lista extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+
+        int filaSeleccionada = jTable1.getSelectedRow();
+        
+   if (filaSeleccionada != -1) {
+        Persona p = personas.get(filaSeleccionada);
+        Detalles detalles = new Detalles(p);
+        detalles.setVisible(true);
+    } else {
+        JOptionPane.showMessageDialog(this, "Seleccione una persona");
+    }     
       
-      
-    Detalles Dt = new Detalles(nombre, apellido, edad, carrera, ciclo, sexo, correo, telefono);
-                Dt.setVisible(true);
-                      
+   
+   if (!personas.isEmpty()) {
+    Persona p = personas.get(0); // o la persona seleccionada
+    Detalles detalles = new Detalles(p);
+    detalles.setVisible(true);} 
+   
+   else {
+        JOptionPane.showMessageDialog(this, "No hay personas para mostrar");
+   }
+ 
     
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    
+    AgregarPersonas agregar = new AgregarPersonas(this); 
+    agregar.setVisible(true);
+    
+    }//GEN-LAST:event_jButton3ActionPerformed
   public void setHoraPosterior (String horaFormateada) {
       
   }
@@ -163,8 +201,16 @@ public class Lista extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
+
+    public void actualizarTabla(Persona p) {
+     
+    DefaultTableModel modeloTabla = (DefaultTableModel) jTable1.getModel();
+       modeloTabla.addRow(new Object[]{p.getNombre(), p.getHoraIngreso()});
+     personas.add(p);
+    }
 }

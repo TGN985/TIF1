@@ -4,27 +4,24 @@ public class Detalles extends javax.swing.JFrame {
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Detalles.class.getName());
 
  
-    public Detalles(String nombre, String apellido, String edad, String carrera, String ciclo, String sexo, String correo, String telefono) {
-    initComponents(); // siempre primero
-
-    // Asignar los datos a los JLabels
-    jLabel1.setText("Nombre(s): " + nombre);
-    jLabel2.setText("Apellidos: " + apellido);
-    jLabel3.setText("Edad: " + edad);
-    jLabel4.setText("Carrera: " + carrera);
-    jLabel5.setText("Ciclo: " + ciclo);
-    jLabel6.setText("Sexo: " + sexo);
-    jLabel7.setText("Correo inst. : " + correo);
-    jLabel8.setText("Telefono : " + telefono);
-  
-    
-    }
- 
-    
- 
-    public Detalles() {
+    public Detalles(Persona persona ) {
         initComponents();
 
+    jLabel1.setText("Nombre(s): " + persona.getNombre());
+    jLabel2.setText("Apellido: " + persona.getApellido());
+    jLabel3.setText("Edad: " + persona.getEdad());
+    jLabel4.setText("Carrera: " + persona.getCarrera());
+    jLabel5.setText("Ciclo: " + persona.getCiclo());
+    jLabel6.setText("Sexo: " + persona.getSexo());
+    jLabel7.setText("Correo: " + persona.getCorreo());
+    jLabel8.setText("Teléfono: " + persona.getTelefono());
+        
+    }
+
+    
+
+    private Detalles() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @SuppressWarnings("unchecked")
@@ -136,7 +133,9 @@ public class Detalles extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       
+    
+    Cursos cursos = new Cursos();    
+       cursos.setVisible(true); 
     }//GEN-LAST:event_jButton1ActionPerformed
 
 
