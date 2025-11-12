@@ -1,14 +1,23 @@
-import javax.swing.*;
-import java.awt.*;
 
 public class Detalles extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Detalles.class.getName());
 
  
+    public Detalles(String nombre, String apellido, String edad, String carrera) {
+    initComponents(); // siempre primero
+
+    // Asignar los datos a los JLabels
+    jLabel1.setText("Nombre(s): " + nombre);
+    jLabel2.setText("Apellidos: " + apellido);
+    jLabel3.setText("Edad: " + edad);
+    jLabel4.setText("Carrera: " + carrera);
+} 
+    
+ 
     public Detalles() {
         initComponents();
-        
+
     }
 
     @SuppressWarnings("unchecked")
@@ -68,7 +77,7 @@ public class Detalles extends javax.swing.JFrame {
                     .addComponent(jLabel5)
                     .addComponent(jLabel4)
                     .addComponent(jLabel3))
-                .addContainerGap(205, Short.MAX_VALUE))
+                .addContainerGap(312, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -109,9 +118,9 @@ public class Detalles extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
+                .addContainerGap()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(34, 34, 34)
                 .addComponent(jButton1)
                 .addContainerGap(48, Short.MAX_VALUE))
         );

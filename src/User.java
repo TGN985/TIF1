@@ -10,10 +10,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- *
- * @author Cesar
- */
+
 public class User extends javax.swing.JFrame {
 
     /**

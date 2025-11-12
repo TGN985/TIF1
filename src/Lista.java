@@ -7,14 +7,19 @@ import java.util.ArrayList;
 
 
 public class Lista extends javax.swing.JFrame {
-
     
+
+  
      private DefaultTableModel modeloTabla;
      
      private static final List<String[]> registros = new ArrayList<>();
      
+
+     
     public Lista() {
         initComponents();
+       
+
         setLocationRelativeTo(null);
     
          modeloTabla = new DefaultTableModel(new Object[]{"Nombre", "Hora de Ingreso"}, 0);
@@ -116,6 +121,7 @@ public class Lista extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+      
       
     Detalles Dt = new Detalles();
                 Dt.setVisible(true);
