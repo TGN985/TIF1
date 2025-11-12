@@ -4,7 +4,7 @@ public class Detalles extends javax.swing.JFrame {
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Detalles.class.getName());
 
  
-    public Detalles(String nombre, String apellido, String edad, String carrera) {
+    public Detalles(String nombre, String apellido, String edad, String carrera, String ciclo, String sexo, String correo, String telefono) {
     initComponents(); // siempre primero
 
     // Asignar los datos a los JLabels
@@ -12,7 +12,14 @@ public class Detalles extends javax.swing.JFrame {
     jLabel2.setText("Apellidos: " + apellido);
     jLabel3.setText("Edad: " + edad);
     jLabel4.setText("Carrera: " + carrera);
-} 
+    jLabel5.setText("Ciclo: " + ciclo);
+    jLabel6.setText("Sexo: " + sexo);
+    jLabel7.setText("Correo inst. : " + correo);
+    jLabel8.setText("Telefono : " + telefono);
+  
+    
+    }
+ 
     
  
     public Detalles() {
@@ -26,7 +33,6 @@ public class Detalles extends javax.swing.JFrame {
 
         jButton1 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -34,6 +40,7 @@ public class Detalles extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -46,21 +53,21 @@ public class Detalles extends javax.swing.JFrame {
 
         jPanel2.setForeground(new java.awt.Color(102, 102, 102));
 
-        jLabel1.setText("Nombre(s) :");
-
         jLabel2.setText("Apellidos :");
 
         jLabel3.setText("Edad :");
 
         jLabel4.setText("Carrera :");
 
-        jLabel5.setText("C:iclo :");
+        jLabel5.setText("Ciclo :");
 
         jLabel6.setText("Sexo :");
 
         jLabel7.setText("Correo Inst:");
 
         jLabel8.setText("Telefono :");
+
+        jLabel1.setText("Nombre(s) :");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -71,13 +78,13 @@ public class Detalles extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel8)
                     .addComponent(jLabel2)
-                    .addComponent(jLabel1)
                     .addComponent(jLabel7)
                     .addComponent(jLabel6)
                     .addComponent(jLabel5)
                     .addComponent(jLabel4)
-                    .addComponent(jLabel3))
-                .addContainerGap(312, Short.MAX_VALUE))
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel1))
+                .addContainerGap(320, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

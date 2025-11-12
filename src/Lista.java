@@ -14,12 +14,27 @@ public class Lista extends javax.swing.JFrame {
      
      private static final List<String[]> registros = new ArrayList<>();
      
-
-     
+    private String nombre;
+    private String apellido;
+    private String edad;
+    private String carrera;
+    private String ciclo;
+    private String sexo;
+    private String correo;
+    private String telefono;
+   
     public Lista() {
         initComponents();
-       
-
+        
+        nombre = "Josue Ninrod";
+        apellido = "Galan Obregon";
+        edad = "18";
+        carrera = "Ing. de Sistemas";
+        ciclo = "III";
+        sexo = "M";
+        correo = "jgalanobr@ucvvirtual.edu.pe";
+        telefono = "+51 931 659 971";
+                
         setLocationRelativeTo(null);
     
          modeloTabla = new DefaultTableModel(new Object[]{"Nombre", "Hora de Ingreso"}, 0);
@@ -123,7 +138,7 @@ public class Lista extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
       
       
-    Detalles Dt = new Detalles();
+    Detalles Dt = new Detalles(nombre, apellido, edad, carrera, ciclo, sexo, correo, telefono);
                 Dt.setVisible(true);
                       
     
