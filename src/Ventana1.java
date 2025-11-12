@@ -17,7 +17,7 @@ public class Ventana1 extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
     
-         modeloTabla = new DefaultTableModel(new Object[]{"Nombre", "XDHora de Ingreso"}, 0);
+         modeloTabla = new DefaultTableModel(new Object[]{"Nombre", "Hora de Ingreso"}, 0);
          jTable1.setModel(modeloTabla);
           for (String[] fila : registros) {
             modeloTabla.addRow(fila);
